@@ -10,7 +10,7 @@ export class DictionaryService {
 
   constructor(private http: HttpClient) { }
 
-  private rootURL = 'http://localhost:4000';
+  private rootURL = process.env['PORT'] || 'http://localhost:4000';
   
 
   async searchWord(word: JSON){
