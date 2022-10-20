@@ -10,7 +10,7 @@ export class DictionaryService {
 
   constructor(private http: HttpClient) { }
 
-  private rootURL = process_angular.env.NG_APP_ENV || 'http://localhost:4000';
+  private rootURL = process1.env.NG_APP_ENV || 'http://localhost:4000';
   
 
   async searchWord(word: JSON){
