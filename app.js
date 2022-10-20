@@ -27,7 +27,7 @@ console.log('*************** Open the application at  http://%s:%s  ************
 server.timeout = 240000;
 
 // read from file
-var data = fs.readFileSync("../dictionary-data/dictionary.csv", "utf8");
+var data = fs.readFileSync("./src/assets/dictionary.csv", "utf8");
 
 // split data each rows
 data = data.split("\n");
