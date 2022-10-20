@@ -1,0 +1,42 @@
+<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" /> -->
+
+<div class="flex justify-center p-8 items-center">
+    <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+        <input
+        type="text"
+        name="input"
+        placeholder="Enter the word"
+        class="
+            form-control
+            py-2
+            w-1/4
+            focus:outline-none
+            border-2 border-green-600
+            rounded
+            px-3"
+            ngModel [ngModelOptions]="{standalone: true}" #input="ngModel" [(ngModel)]="this.word.input" value="this.word.input" onchange="try{setCustomValidity('')}catch(e){}" oninvalid="this.setCustomValidity('Word cannot be empty, special characters or numbers')" [pattern]=this.wordRegex required
+        />
+        <button
+        id="search"
+        class="bg-green-600 text-white text-xl px-4 py-2 rounded"
+        type="submit">
+        Search
+        </button>
+    </form>
+</div>
+
+<div class="flex flex-col p-8 items-center definition" *ngIf="this.searched">
+    <div class="flex-start found" *ngIf="this.found">
+        Definition(s):
+        <div *ngFor="let definition of this.definition.output; index as i">
+            {{i + 1}}) {{definition}}
+        </div>
+    </div>
+
+    <div class="flex-start notFound" *ngIf="!this.found">
+        The word inserted is not available in our database. Please try another word.
+    </div>
+</div>
+
+
+

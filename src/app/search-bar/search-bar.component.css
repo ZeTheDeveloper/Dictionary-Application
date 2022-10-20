@@ -1,0 +1,20 @@
+.search-form{
+    flex: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.definition{
+    
+    margin: 0px 70px;
+}
+
+.found{
+    background-color: lightgreen;
+    padding: 8%;
+}
+
+.notFound{
+    background-color: lightpink;
+    padding: 8%;
+}
