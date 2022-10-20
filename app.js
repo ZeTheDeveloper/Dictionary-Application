@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(__dirname + '/dist/app'));
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));
 
-var server = http.createServer(app).listen(port, function () { console.log(`Server started on ${port}`) });
+var server = http.createServer(app).listen(process.env.PORT || port, function () { console.log(`Server started on ${port}`) });
 console.log('****************** SERVER STARTED ************************');
 console.log('*************** Open the application at  http://%s:%s  ******************', host, port);
 server.timeout = 240000;
